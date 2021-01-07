@@ -4,9 +4,9 @@ from urllib.parse import urlencode
 import pysodium
 import requests
 from base64 import b64decode
-from ThreefoldLoginSdk.utils.crypto import generate_key_pair, get_ed_pk_in_curve, decrypt
+from ThreefoldLoginPkg.utils.crypto import generate_key_pair, get_ed_pk_in_curve, decrypt
 
-from ThreefoldLoginSdk.utils.parse import parse_signed_attempt_from_url
+from ThreefoldLoginPkg.utils.parse import parse_signed_attempt_from_url
 
 
 class ThreefoldLogin:

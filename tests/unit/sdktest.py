@@ -1,10 +1,10 @@
 import json
 import unittest
 
-import ThreefoldLoginSdk
-import ThreefoldLoginSdk.threefold_login
-from ThreefoldLoginSdk.utils.crypto import generate_key_pair, get_ed_pk_in_curve
-from ThreefoldLoginSdk.utils.parse import parse_signed_attempt_from_url
+import ThreefoldLoginPkg
+import ThreefoldLoginPkg.threefold_login
+from ThreefoldLoginPkg.utils.crypto import generate_key_pair, get_ed_pk_in_curve
+from ThreefoldLoginPkg.utils.parse import parse_signed_attempt_from_url
 
 protocol = 'https:'
 rawHost = 'login.staging.jimber.org'
@@ -27,10 +27,10 @@ test_signed_attempt = 'OQbbjNSmkvxtVDcjcnbN+AQjkiZaruNCQ2arNQ01I1atiK4rcFpBzxm36
 test_signed_email_identifier = 'LouB5RT/tmQxfW1M2unm/khafCu0ib4cpsKpm9ETwKgjlhhb4cV/Qw5T0vMMnEpcOKS0Bq0pBjFMOkEgGBnYDXsgImVtYWlsIjogIm1hdGhpYXMuZGUud2VlcmR0QGdtYWlsLmNvbSIsICJpZGVudGlmaWVyIjogInRhaWsuM2JvdCIgfQ==';
 
 
-class TestThreefoldLoginSdk(unittest.TestCase):
+class TestThreefoldLoginPkg(unittest.TestCase):
 
     def setUp(self) -> None:
-        self.login = ThreefoldLoginSdk.threefold_login.ThreefoldLogin(
+        self.login = ThreefoldLoginPkg.threefold_login.ThreefoldLogin(
             three_fold_api_host,
             app_id,
             seed_phrase,
@@ -44,14 +44,14 @@ class TestThreefoldLoginSdk(unittest.TestCase):
         test_redirect_url = ''
         test_kyc_backend_url = ''
 
-        login = ThreefoldLoginSdk.threefold_login.ThreefoldLogin(
+        login = ThreefoldLoginPkg.threefold_login.ThreefoldLogin(
             test_three_fold_api_host,
             test_app_id,
             test_seed_phrase,
             test_redirect_url,
             test_kyc_backend_url)
 
-        self.assertIsInstance(login, ThreefoldLoginSdk.threefold_login.ThreefoldLogin)
+        self.assertIsInstance(login, ThreefoldLoginPkg.threefold_login.ThreefoldLogin)
 
     def test_getters(self):
         test_three_fold_api_host = 'test0'
@@ -60,7 +60,7 @@ class TestThreefoldLoginSdk(unittest.TestCase):
         test_redirect_url = 'test3'
         test_kyc_backend_url = 'test4'
 
-        login = ThreefoldLoginSdk.threefold_login.ThreefoldLogin(
+        login = ThreefoldLoginPkg.threefold_login.ThreefoldLogin(
             test_three_fold_api_host,
             test_app_id,
             test_seed_phrase,
